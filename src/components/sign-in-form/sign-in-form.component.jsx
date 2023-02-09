@@ -5,7 +5,6 @@ import FromInput from "../form-input/form-input.component";
 
 import "./sign-in-form.styles.scss";
 import {
-  createUserDocumentFromAuth,
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
