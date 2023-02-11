@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const DirectoryItem = ({ category }) => {
+  console.log(category);
   const { imageUrl, title } = category;
   const navigate = useNavigate();
   const goToCategoryHandler = () => {

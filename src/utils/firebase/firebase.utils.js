@@ -72,6 +72,23 @@ export const getCategoriesAndDocuments = async () => {
   return categoryMap;
 };
 
+export const getCategoryDescriptionAndDocuments = async () => {
+  const categoryDescriptionRef = collection(db, "categoryDescription");
+  const q = query(categoryDescriptionRef);
+
+  const querySnapshot = await getDocs(q);
+  const categoryDescriptionMap = querySnapshot.docs.reduce(
+    (acc, docSnapshot) => {
+      const { title, id, imageUrl } = docSnapshot.data();
+      acc[title.toLowerCase()] = [{ id, title, imageUrl }];
+      return acc;
+    },
+    {}
+  );
+  console.log("work");
+  return categoryDescriptionMap;
+};
+
 export const createUserDocumentFromAuth = async (
   userAuth,
   additionalInformation = {}
