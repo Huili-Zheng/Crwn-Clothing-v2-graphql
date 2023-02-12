@@ -85,7 +85,6 @@ export const getCategoryDescriptionAndDocuments = async () => {
     },
     {}
   );
-  console.log("work");
   return categoryDescriptionMap;
 };
 
